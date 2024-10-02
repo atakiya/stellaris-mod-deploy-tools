@@ -14,5 +14,4 @@ FOR /F "tokens=3" %%G IN (
 SET mods_directory=%user_data_home%\Paradox Interactive\Stellaris\mod\
 SET canonical_mod_path=%mods_directory%\%mod_name%
 
-ECHO %canonical_mod_path%
 ECHO Using internal name: %mod_name%
