@@ -24,7 +24,7 @@ if (-not [System.IO.File]::Exists($mod_descriptor)) {
 }
 
 $mods_directory = "$([Environment]::GetFolderPath("MyDocuments"))/Paradox Interactive/Stellaris/mod/"
-(Select-String -Path "$mod_descriptor" -Pattern "path" -SimpleMatch) -match 'path\s*=\s*"mod/(?<name>.+?)"' | Out-Null
+(Select-String -Path "$mod_descriptor" -Pattern "path" -SimpleMatch) -match 'path\s*=\s*".*mod/(?<name>.+?)"' | Out-Null
 $mod_name = $matches.name
 
 $canonical_mod_path = "$mods_directory/$mod_name"

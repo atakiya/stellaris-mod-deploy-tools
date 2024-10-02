@@ -10,7 +10,7 @@ if [ ! -f "$mod_descriptor" ]; then
 	exit 1
 fi
 
-mod_name=$(grep -oP 'path\s*=\s*"mod\/\K(.+?)(?=")' "$mod_descriptor")
+mod_name=$(grep -oP 'path\s*=\s*".*mod\/\K(.+?)(?=")' "$mod_descriptor")
 mods_directory="$user_data_home/Paradox Interactive/Stellaris/mod/"
 
 # shellcheck disable=SC2034
