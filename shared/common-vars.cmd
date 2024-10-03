@@ -1,9 +1,13 @@
 @ECHO OFF
 
+REM Should this have been powershell 5.1 calls? Yes.
+REM Do I regret this? Yes.
+REM Was it fun? Absolutely.
+
 SET mod_descriptor=%CD%\descriptor.mod
 REM Get the 'path=' line from the descriptor.mod file
 FOR /F "tokens=*" %%G IN (
-	'FINDSTR /R "^path" %mod_descriptor%' ) DO (SET mod_name=%%G)
+	'FINDSTR /R "^path" "%mod_descriptor%"' ) DO (SET mod_name=%%G)
 REM Trim the 'path=' part
 FOR /F "tokens=2 delims==" %%G IN ( "%mod_name%" ) DO (SET mod_name=%%G)
 REM Trim quotes
